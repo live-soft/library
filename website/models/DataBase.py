@@ -1,9 +1,10 @@
 from website.models.Tables import CreateTables
+from website.models.config import host,user,password,cursorclass,database
 import pymysql.cursors
 
 class DataBase():
     def create():
-        connectionDB = pymysql.connect(host = 'localhost', user = 'root', password = '', cursorclass = pymysql.cursors.DictCursor)
+        connectionDB = pymysql.connect(host = host, user = user, password = password, cursorclass = cursorclass)
         mycursor = connectionDB.cursor()
         mycursor.execute("show databases")
 
@@ -12,7 +13,7 @@ class DataBase():
         if len(list(populated)) == 0:
             mycursor.execute("CREATE DATABASE library")
 
-            connection = pymysql.connect(host = 'localhost', user = 'root', password = '', database = 'library', cursorclass = pymysql.cursors.DictCursor)
+            connection = pymysql.connect(host = host, user = user, password = password, database = database, cursorclass = cursorclass)
 
             books = CreateTables.books(connection)
             students = CreateTables.students(connection)
