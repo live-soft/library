@@ -1,0 +1,33 @@
+body {
+    padding: 50px 350px;
+}
+
+.assign-btn {
+    float: right;
+}
+
+.single-book-info {
+    background-color: #0000ff1a;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #00000017;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    text-align: center;
+    background: red;
+    width: 300px;
+    color: #fff;
+    height: 40px;
+    padding-top: 7px;
+    margin: 0px auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+}
+
+.op {
+    opacity: 1;
+}
