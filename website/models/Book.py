@@ -28,7 +28,7 @@ class Book():
 
     def updateCount(count, bookId):
         connection = Connect.connection()
-        with Connect.connection().cursor() as cursor:
+        with connection.cursor() as cursor:
             cursor.execute(f'UPDATE `books` SET count={ count } WHERE id={ bookId }')
 
         connection.commit()
